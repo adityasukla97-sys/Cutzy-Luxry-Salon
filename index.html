@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-secondary": "#ffffff",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed": "#30130b",
+        "surface-variant": "#e5e2dd",
+        "secondary": "#735c00",
+        "primary-fixed-dim": "#ffb3b6",
+        "error-container": "#ffdad6",
+        "on-tertiary-container": "#b08173",
+        "surface-container": "#f0ede9",
+        "inverse-on-surface": "#f3f0eb",
+        "primary": "#2a0006",
+        "on-surface": "#1c1c19",
+        "on-primary-fixed": "#3d040e",
+        "secondary-container": "#fed65b",
+        "inverse-surface": "#31302d",
+        "surface-container-highest": "#e5e2dd",
+        "surface": "#fcf9f4",
+        "on-background": "#1c1c19",
+        "on-primary-container": "#ca7379",
+        "on-secondary-fixed": "#241a00",
+        "surface-container-high": "#ebe8e3",
+        "secondary-fixed": "#ffe088",
+        "outline-variant": "#d9c1c1",
+        "surface-tint": "#93474d",
+        "on-secondary-fixed-variant": "#574500",
+        "tertiary": "#210803",
+        "tertiary-fixed": "#ffdbd1",
+        "error": "#ba1a1a",
+        "on-tertiary-fixed-variant": "#633d32",
+        "on-error": "#ffffff",
+        "outline": "#867273",
+        "surface-container-lowest": "#ffffff",
+        "secondary-fixed-dim": "#e9c349",
+        "on-secondary-container": "#745c00",
+        "surface-bright": "#fcf9f4",
+        "tertiary-container": "#3b1c13",
+        "inverse-primary": "#ffb3b6",
+        "tertiary-fixed-dim": "#f0baab",
+        "surface-container-low": "#f6f3ee",
+        "surface-dim": "#dcdad5",
+        "primary-container": "#4a0e17",
+        "on-error-container": "#93000a",
+        "background": "#fcf9f4",
+        "on-primary-fixed-variant": "#763037",
+        "on-surface-variant": "#544343",
+        "on-tertiary": "#ffffff",
+        "primary-fixed": "#ffdada"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "space-4xl": "6rem",
+        "container-max": "1280px",
+        "space-2xl": "3rem",
+        "space-xs": "0.5rem",
+        "space-2xs": "0.25rem",
+        "space-3xl": "4rem",
+        "gutter-desktop": "2rem",
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-xl": "2rem",
+        "gutter-mobile": "1rem",
+        "space-sm": "0.75rem"
+      },
+      "fontFamily": {
+        "display-xl-mobile": ["Playfair Display"],
+        "label-sm": ["Montserrat"],
+        "title-md": ["Montserrat"],
+        "headline-lg-mobile": ["Playfair Display"],
+        "body-lg": ["Montserrat"],
+        "headline-lg": ["Playfair Display"],
+        "headline-sm": ["Playfair Display"],
+        "label-lg": ["Montserrat"],
+        "body-sm": ["Montserrat"],
+        "body-md": ["Montserrat"],
+        "display-xl": ["Playfair Display"],
+        "headline-md": ["Playfair Display"],
+        "label-md": ["Montserrat"]
+      },
+      "fontSize": {
+        "display-xl-mobile": ["38px", {"lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-sm": ["9px", {"lineHeight": "12px", "letterSpacing": "0.16em", "fontWeight": "700"}],
+        "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "headline-lg-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+        "headline-sm": ["22px", {"lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "label-lg": ["13px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600"}],
+        "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+        "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+        "display-xl": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "500"}],
+        "label-md": ["11px", {"lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 shadow-[0_4px_20px_rgba(74,14,23,0.06)]"><div class="w-full bg-primary text-secondary-fixed py-space-2xs px-gutter-mobile lg:px-gutter-desktop text-center font-label-md tracking-wider border-b border-secondary/20 flex items-center justify-center gap-space-sm"><span class="text-secondary-fixed-dim">✨ 4.9★ Rated Salon in Shahdara, Delhi • Daily 11 AM – 8 PM • Call:</span><a class="text-secondary-fixed underline hover:text-on-primary transition-colors font-medium" href="tel:+919582684926">+91 95826 84926</a></div><div class="h-20 bg-surface/95 backdrop-blur-md border-b border-surface-container-highest/60"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop h-full flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><img alt="Cutzy Salon Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Wb4Pj5Uecvh1RVFi_YvkUbtfnsa5LSjUG0sTXzM2n0b_Pk2NZWM6VIbrrEJu0f__bV_ecKL0PxflfAeuBawQZwP96vNAAtYsCswA_LZ_b12SRS5vBIlpfNG7DUgpAot0-FZI7iLs57qOEDaaP2_r-Z7_PsjzqjLQSgXYrFiv9rC2_lOwrkvinCnzRERiE_uNnUgtnwVI2G0ZzTWgH7_fwxS-NBgOsR8fW7YrWdT0wTFLwj55LW0ovQ"/><div class="flex flex-col"><span class="font-headline-sm text-primary tracking-tight font-semibold leading-tight">CUTZY</span><span class="font-label-sm text-secondary tracking-widest uppercase">Luxury Salon • Delhi</span></div></a></div><nav class="hidden xl:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-semibold border-b-2 border-secondary"><a aria-current="page" class="uppercase tracking-wider transition-colors py-space-xs text-primary font-semibold border-b-2 border-secondary" data-path="home" href="#">Home</a><a class="font-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="services" href="#">Services</a><a class="font-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="gallery" href="#">Gallery</a><a class="font-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="reviews" href="#">Reviews</a><a class="font-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="about" href="#">About</a><a class="font-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="location" href="#">Location</a><a class="font-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors py-space-xs" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm sm:gap-space-md"><a class="hidden sm:flex items-center gap-space-2xs text-primary font-label-md uppercase tracking-wider px-space-sm py-space-xs rounded-lg hover:bg-surface-container transition-colors" href="tel:+919582684926"><span class="material-symbols-outlined text-secondary text-[18px]">call</span><span class="hidden md:inline">+91 95826 84926</span></a><a class="relative inline-flex items-center justify-center px-space-md lg:px-space-lg py-space-xs bg-primary-container text-on-primary rounded-lg font-label-lg uppercase tracking-wider shadow-[0_4px_14px_rgba(74,14,23,0.35)] ring-1 ring-secondary/40 hover:bg-primary transition-all duration-200 group overflow-hidden" data-path="appointment-booking" href="#"><span class="absolute inset-0 bg-gradient-to-r from-secondary-fixed/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span><span class="relative z-10">Book Appointment</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-inner"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-bright py-space-2xl lg:py-space-4xl">
+<!-- Decorative Ambient Glows -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-secondary-fixed/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-container/5 rounded-full blur-2xl pointer-events-none -z-10"></div>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl lg:gap-space-2xl items-center">
+<!-- Left Editorial Column (7 cols) -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-space-md lg:space-y-space-lg">
+<!-- Trust Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-surface-container shadow-sm border border-secondary/20">
+<div class="flex text-secondary text-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm uppercase tracking-wider text-primary font-bold">4.9 Rating based on 1,243+ Verified Google Reviews</span>
+</div>
+<!-- Main Hero Headline -->
+<h1 class="font-display-xl text-primary leading-tight tracking-tight">
+            Exquisite Hair &amp; <br class="hidden sm:inline"/>
+<span class="italic font-normal text-secondary">Beauty Artistry</span> in Shahdara, Delhi
+          </h1>
+<!-- Subheading -->
+<p class="font-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+            Experience bespoke hair transformations, bridal elegance, rejuvenating skin rituals, and luxury nail styling within an opulent boutique sanctuary designed for sublime relaxation.
+          </p>
+<!-- CTAs Bar -->
+<div class="flex flex-wrap items-center gap-space-sm sm:gap-space-md pt-space-xs w-full">
+<button class="px-space-lg py-3.5 bg-primary-container text-on-primary rounded-lg font-label-lg uppercase tracking-wider shadow-lg hover:bg-primary transition-all duration-200 flex items-center gap-space-xs" onclick="openBookingModal()">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span>Book Appointment</span>
+</button>
+<a class="px-space-md py-3.5 bg-surface-container-lowest text-primary rounded-lg font-label-lg uppercase tracking-wider shadow-sm hover:bg-surface-container transition-colors flex items-center gap-space-xs border border-outline-variant/40" href="tel:+919582684926">
+<span class="material-symbols-outlined text-[20px] text-secondary">call</span>
+<span>+91 95826 84926</span>
+</a>
+<a class="px-space-md py-3.5 bg-[#25D366]/10 text-[#128C7E] rounded-lg font-label-lg uppercase tracking-wider hover:bg-[#25D366]/20 transition-colors flex items-center gap-space-xs" href="https://wa.me/917011171298" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp Us</span>
+</a>
+</div>
+<!-- Micro Highlights Pill Matrix -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-md w-full border-t border-surface-container-highest/60">
+<div class="flex flex-col">
+<span class="font-title-md text-primary font-bold">10+</span>
+<span class="font-body-sm text-on-surface-variant text-xs">Master Stylists</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-primary font-bold">Olaplex &amp; Dyson</span>
+<span class="font-body-sm text-on-surface-variant text-xs">Certified Rituals</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-primary font-bold">100%</span>
+<span class="font-body-sm text-on-surface-variant text-xs">Hygiene Assured</span>
+</div>
+</div>
+</div>
+<!-- Right Visual Showcase (5 cols) -->
+<div class="lg:col-span-5 relative mt-space-lg lg:mt-0">
+<div class="relative mx-auto max-w-md lg:max-w-none">
+<!-- Main Salon Interior Image -->
+<div class="relative z-10 rounded-xl overflow-hidden shadow-2xl bg-surface-container-high border-4 border-surface-container-lowest">
+<img alt="Cutzy Salon luxurious warm interior in Shahdara" class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh20eb8OoEgftQkfVmUx-6h9paQxBXDinV6QLJG33RQrpqMd6fdBYc0ASoo_ccvsUscEEQMNCzHIcW-z43mW2N0IJbTEN6XJx4yzSsdg2PyJiK_ks2-cj4lfZRcQGCuWupuz2GZdmmO4j9RhIpfnp0wpCvgbkgtAUoHAlVbzIV4lOoL8WyAGnIaXg0Knp6eatHRshplDS9PLApgkDEMipE7IzwmYL2ywZS379bQg5e9y648gsM3iee4umQ5A3z3t7uRzs"/>
+<div class="absolute bottom-3 left-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md p-3 rounded-lg shadow-md flex items-center justify-between">
+<div>
+<p class="font-headline-sm text-sm text-primary font-semibold">Boutique Atelier Interior</p>
+<p class="font-body-sm text-xs text-on-surface-variant">Private wash stations &amp; illuminated vanity mirrors</p>
+</div>
+<span class="px-2 py-1 bg-secondary-fixed/40 text-on-secondary-fixed text-[10px] font-label-sm uppercase rounded font-bold">Luxe View</span>
+</div>
+</div>
+<!-- Overlapping Glamour Portrait Card -->
+<div class="relative sm:absolute sm:-bottom-10 sm:-left-12 mt-space-md sm:mt-0 z-20 w-full sm:w-60 rounded-xl overflow-hidden shadow-2xl bg-surface-container-lowest border-4 border-surface-container-lowest transition-transform hover:-translate-y-1">
+<img alt="Artisanal balayage hair transformation at Cutzy Salon" class="w-full h-56 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC69h6UNTG5Tyyn3S99j6w1J9NQE96Yif4Nd9vBYT2czt278saT1OjBozh7B51804bfGZkmJL-ANJGsI9660sEa9F3Fq-M3fUB2UlZevKfPHCjNuocCLoSGNMyffLXW-Huhgq_7SDEOcbgFrKGnkfjuAI7XE_GsP8H11wlxMEThfQWTpEvLTkCqZfTH27uLNy_UIEUm2uNc9Ig7NEQMzpkJQfZJ8kozZH1S0w_0kHNJSXMGh4eNZ3M0Q6-ZpWxJikS-m-w"/>
+<div class="p-3 bg-surface-container-lowest">
+<div class="flex items-center justify-between">
+<span class="font-label-sm uppercase tracking-wider text-secondary font-bold">Balayage Signature</span>
+<span class="text-xs text-secondary font-bold">★ 5.0</span>
+</div>
+<p class="font-body-sm text-xs text-primary font-medium mt-0.5">Bespoke Tone &amp; Glass Shine</p>
+</div>
+</div>
+<!-- Decorative floating badge -->
+<div class="hidden sm:flex absolute -top-6 -right-6 z-20 bg-primary text-secondary-fixed p-4 rounded-full w-24 h-24 shadow-xl flex-col items-center justify-center text-center animate-bounce duration-1000">
+<span class="text-xs font-bold uppercase tracking-widest font-label-sm">4.9★</span>
+<span class="text-[9px] font-label-sm text-surface-container">DELHI TOP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- QUICK STATS & HIGHLIGHTS STRIP -->
+<section class="w-full bg-surface-container-high py-space-md border-y border-surface-container-highest">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md divide-x divide-outline-variant/30 text-center">
+<div class="px-space-xs flex flex-col items-center justify-center">
+<div class="flex items-center text-secondary mb-1">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-sm text-lg text-primary font-bold ml-1">4.9 / 5.0</span>
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant font-medium">1,243+ Verified Google Reviews</p>
+</div>
+<div class="px-space-xs flex flex-col items-center justify-center">
+<span class="font-headline-sm text-lg text-primary font-bold mb-1">10,000+</span>
+<p class="font-body-sm text-xs text-on-surface-variant font-medium">Satisfied Regular Patrons</p>
+</div>
+<div class="px-space-xs flex flex-col items-center justify-center">
+<div class="flex items-center text-secondary mb-1">
+<span class="material-symbols-outlined text-lg mr-1">schedule</span>
+<span class="font-headline-sm text-lg text-primary font-bold">11 AM – 8 PM</span>
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant font-medium">Open Everyday Monday – Sunday</p>
+</div>
+<div class="px-space-xs flex flex-col items-center justify-center">
+<div class="flex items-center text-primary mb-1">
+<span class="material-symbols-outlined text-lg mr-1 text-secondary">pin_drop</span>
+<span class="font-headline-sm text-lg text-primary font-bold">Shahdara Atelier</span>
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant font-medium">Opp. Ganesh Chole Bhature, Delhi</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES CATALOG WITH FILTER TABS -->
+<section class="w-full py-space-3xl bg-surface" id="services"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-2xl"><span class="font-label-sm uppercase tracking-widest text-secondary font-bold mb-space-2xs">Our Services</span><h2 class="font-headline-lg text-primary">Beauty &amp; Salon Services</h2><div class="w-16 h-0.5 bg-secondary my-space-xs"></div><p class="font-body-md text-on-surface-variant">Explore our complete range of hair, beauty, nail, skincare, bridal, spa and waxing services.</p></div><div class="flex items-center justify-start md:justify-center overflow-x-auto no-scrollbar gap-space-xs pb-space-md mb-space-xl"><button class="service-tab active px-space-md py-2 rounded-full font-label-md uppercase tracking-wider text-xs transition-all bg-primary text-on-primary shadow-sm whitespace-nowrap" data-tab="all" onclick="filterServices('all')">All Offerings</button><button class="service-tab px-space-md py-2 rounded-full font-label-md uppercase tracking-wider text-xs transition-all bg-surface-container text-on-surface hover:bg-surface-container-high whitespace-nowrap" data-tab="hair" onclick="filterServices('hair')">Hair &amp; Treatments</button><button class="service-tab px-space-md py-2 rounded-full font-label-md uppercase tracking-wider text-xs transition-all bg-surface-container text-on-surface hover:bg-surface-container-high whitespace-nowrap" data-tab="nails" onclick="filterServices('nails')">Nails &amp; Lashes</button><button class="service-tab px-space-md py-2 rounded-full font-label-md uppercase tracking-wider text-xs transition-all bg-surface-container text-on-surface hover:bg-surface-container-high whitespace-nowrap" data-tab="skin" onclick="filterServices('skin')">Skincare &amp; Facials</button><button class="service-tab px-space-md py-2 rounded-full font-label-md uppercase tracking-wider text-xs transition-all bg-surface-container text-on-surface hover:bg-surface-container-high whitespace-nowrap" data-tab="bridal" onclick="filterServices('bridal')">Makeup &amp; Bridal</button><button class="service-tab px-space-md py-2 rounded-full font-label-md uppercase tracking-wider text-xs transition-all bg-surface-container text-on-surface hover:bg-surface-container-high whitespace-nowrap" data-tab="spa" onclick="filterServices('spa')">Spa &amp; Waxing</button></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="services-grid"><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="skin"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Acne treatments</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional acne treatments service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Acne treatments')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="nails"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Acrylic nails</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional acrylic nails service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Acrylic nails')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Balayage</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional balayage service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Balayage')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Blow dry</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional blow dry service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Blow dry')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="spa"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Body waxing</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional body waxing service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Body waxing')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Box braids</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional box braids service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Box braids')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Braids</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional braids service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Braids')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="spa"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Brazilian waxing</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional brazilian waxing service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Brazilian waxing')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="bridal"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Bridal services</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional bridal services service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Bridal services')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="skin"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Eyebrow shaping</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional eyebrow shaping service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Eyebrow shaping')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="skin"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Eyebrow threading</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional eyebrow threading service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Eyebrow threading')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="nails"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Eyelashes</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional eyelashes service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Eyelashes')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="skin"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Facials</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional facials service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Facials')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Haircut</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional haircut service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Haircut')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Hair extensions</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional hair extensions service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Hair extensions')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Hairstyling</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional hairstyling service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Hairstyling')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Hair threading</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional hair threading service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Hair threading')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="bridal"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Make-up</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional make-up service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Make-up')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="bridal"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Make-up services</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional make-up services service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Make-up services')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="nails"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Manicure</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional manicure service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Manicure')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="spa"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Massage</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional massage service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Massage')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="spa"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Online beauty salon booking</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional online beauty salon booking service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Online beauty salon booking')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="nails"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Pedicure</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional pedicure service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Pedicure')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Perms</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional perms service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Perms')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Shampoo &amp; conditioning</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional shampoo &amp; conditioning service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Shampoo &amp; conditioning')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="spa"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Shaving</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional shaving service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Shaving')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="skin"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Skin care</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional skin care service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Skin care')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="spa"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Spa services</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional spa services service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Spa services')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="spa"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Tanning</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional tanning service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Tanning')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="spa"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Waxing</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional waxing service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Waxing')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="bridal"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Wedding and event preparation</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional wedding and event preparation service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Wedding and event preparation')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Keratin, botox, Nanoplastia</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional keratin, botox, nanoplastia service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Keratin, botox, Nanoplastia')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Keratin</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional keratin service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Keratin')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Botox</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional botox service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Botox')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Nanoplastia</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional nanoplastia service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Nanoplastia')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Kerasmoothening</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional kerasmoothening service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Kerasmoothening')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Kerashine</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional kerashine service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Kerashine')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Olaplex</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional olaplex service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Olaplex')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="hair"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Perming</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional perming service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Perming')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div><div class="service-card bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="nails"><div><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm uppercase tracking-wider text-secondary font-semibold bg-secondary-fixed/20 px-2 py-0.5 rounded">Service</span><span class="font-headline-sm text-primary text-base">Contact for Price</span></div><h3 class="font-headline-sm text-primary text-lg mb-2">Nail art</h3><p class="font-body-md text-on-surface-variant text-sm mb-space-md">Professional nail art service tailored to your needs.</p></div><div class="pt-space-sm border-t border-surface-container flex items-center justify-between"><span class="font-body-sm text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> By consultation</span><button class="text-primary font-label-md uppercase tracking-wider text-xs font-bold hover:text-secondary flex items-center gap-1" onclick="openBookingModalWithService('Nail art')">Book This <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div></div></div></section>
+<!-- INTERACTIVE GALLERY SECTION (WITH LIGHTBOX) -->
+<section class="w-full py-space-3xl bg-surface-bright border-t border-surface-container-highest" id="gallery">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-md">
+<div>
+<span class="font-label-sm uppercase tracking-widest text-secondary font-bold mb-space-2xs">The Curated Folio</span>
+<h2 class="font-headline-lg text-primary">Artisanal Transformations</h2>
+</div>
+<p class="font-body-md text-on-surface-variant max-w-md text-sm">
+          Every client transformation at Cutzy Salon reflects meticulous attention to color harmony, structural cutting, and refined luxury.
+        </p>
+</div>
+<!-- Masonry-Style Responsive Portfolio Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Image 1 -->
+<div class="group relative rounded-xl overflow-hidden shadow-md cursor-pointer aspect-[3/4] bg-surface-container" onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuDjfE4CJwAo9-H4t034GnS6dTtNysD3vDpWzqdTTrGLUBRCqmSeHpdN-It-mdgVkIrdGkk1D9oe0G1c8zPFCYACjb_nHecujLTU-__T69KqoGuO7IGhXa5-eKasy7bLvaoDcneTTT97WIFyS0xe8Kf8wOKqrU712ScQZWnd0LNrDoYarxcb3g_4jrZ8nbri_YaxBzgKFThuw1xQGx4alkJMdStilikQUkhqdqxJfnE7eXkejMzf7sm7x8wnGcTZ7O9TjvA', 'Artisanal Soft Layered Styling', 'Client soft layered blow-dry transformation at Cutzy Salon.')">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A glamorous woman with voluminous honey-caramel balayage waves inside a luxury Delhi salon with warm gold lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS1KSefht8kKL99F121klkTrUmeS44E_a-wseiypyATOkzJ-YTrPr9PFcvm5vSfKiaHWfBlHY0Q_zNxNWv4__k_2bc-EZepW1a0_TKw-JMJDzil1ExX4P9c1mXdJfvcqoo9s1FWdSYCA_fYRfY-1S-Z8ACzYO4omTfA9mRqmVxV7JRmwfgA1NC4guoS2rh-Uj54u15j9KqZ4sveJOref_j2a4crWCTWS5EO0XIlaI5XYp6F8nLc_Y5osFlvU1JtxiqPYg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-space-md text-on-primary">
+<span class="font-label-sm uppercase tracking-widest text-secondary-fixed text-[10px]">Hair Color</span>
+<p class="font-headline-sm text-sm">Honey Caramel Balayage</p>
+<span class="font-body-sm text-[11px] opacity-80 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">zoom_in</span> Click to inspect
+            </span>
+</div>
+</div>
+<!-- Image 2 -->
+<div class="group relative rounded-xl overflow-hidden shadow-md cursor-pointer aspect-[3/4] bg-surface-container" onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuB4T7NaIG5LU4Mw-geGZQY9zZOsaSuFHxenBjXeZKNmRZN7nfdwfIKzVV5QhLLmpCCcxEZA2eBJhi6rlhR7yZZYCs5yVnPwjl6OVCH8n0a28Sa-VHvCpI02zCCIsW8rMZxaQFygb9oweN3RwD0rAc0In5QVEdy_S0u6VjJlO-2Ufj3F2Ia-MJakLFsJfV7Blgnkj0Z3V_4WCYZRm3G_okSn4FF8Pm3tZGxG-gxIlUhFHnXxPSFPXx7yZJqng6uk9I88_ck', 'Multi-Tone Balayage Artistry', 'Multi-tone dimensional balayage layers crafted at Cutzy Salon.')">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Stunning Indian bride wearing rich maroon lehenga and emerald jewelry with immaculate HD airbrush makeup in warm ambient studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT-W8PHcybG700kliCkO1YVlwuuLMq9rzcnfi-G8t14Kh9HeQM0wqjpoxJHjThhr6WwVKqaCuE5uH3nYnxkTIqsR8kUn2PnYTKdrjrS62dx5vV3vcVTmf_38r2pYZUv8qBmIcYNgVbQn78YEGsCFD9Xlh_u76Xl7oNWaCqu7jm7EASkU2tyai3yL9n-bcCuw6o7sZEPByMXxzvD2VeQyR9agp8ltYDdn48eIRI8Awbd0oJPSJPZd18SaeTdDFIYzqJ77c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-space-md text-on-primary">
+<span class="font-label-sm uppercase tracking-widest text-secondary-fixed text-[10px]">Bridal Couture</span>
+<p class="font-headline-sm text-sm">Regal Wedding Makeover</p>
+<span class="font-body-sm text-[11px] opacity-80 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">zoom_in</span> Click to inspect
+            </span>
+</div>
+</div>
+<!-- Image 3 -->
+<div class="group relative rounded-xl overflow-hidden shadow-md cursor-pointer aspect-[3/4] bg-surface-container" onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuD1myiuBOELdFfZsCKq7syaGEPqlmH4_LygH74ZERbp4MQyKR6p_sAI1qUQpVBPc4bZRty7H8nNF7aVgLM-iXBeSkE49kqhDTZTiBFesijUh1bPRYeksNQpIrvgURKRzMnc2HdUJck_p9h687shhahfApCB38e7RAZCy3TDe8PZ_RCjyk9VsD2nyq5o2VSgU7w0op_zaSF35nTsK5cWPezjvatkTgnJhHjuUZ4MZU2T0B0ieMIQ7ZYXFf4H88zKYpqg2U4', 'Chrome &amp; Luxury Nail Extensions', 'Artisanal chrome nail art and gel extensions at Cutzy Salon.')">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Extreme close up of luxury manicure featuring almond shaped gel nails with rose gold chrome french tips and delicate diamond crystals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyjGuS5fkrXepK3YYrmUwAkTUDnJnsA8MRhBSIkGKg0uWCsShlKGZ73siQAjTx0l2bPP7-nBUcxdXOjTzwe9fYmWHGe-cnzaInyE5HrW89h5uwiNGIWoDL9Ef1x-IwOb1jLF2S8fEOX1H2gHWnP0ojy0dUJ9qnns1hfY7K1G6vD4e_Ehi-XTZ5O4PJvNg1MVe0WNJ0_ZM2Jsnxv13DfH9YHznE24-4Ag7FSSSRCFpHFFgQ29PuJ3xM3DLcVprs2OUpYb0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-space-md text-on-primary">
+<span class="font-label-sm uppercase tracking-widest text-secondary-fixed text-[10px]">Nail Atelier</span>
+<p class="font-headline-sm text-sm">Chrome Rose Gel Sculpting</p>
+<span class="font-body-sm text-[11px] opacity-80 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">zoom_in</span> Click to inspect
+            </span>
+</div>
+</div>
+<!-- Image 4 -->
+<div class="group relative rounded-xl overflow-hidden shadow-md cursor-pointer aspect-[3/4] bg-surface-container" onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuBlhcrsyXey8Cbt8PhKx0ToacAlOluNkRh3Vz05ZGPgsvbXUl21_gVc4qorCROSvsSr_vU5W0wJwIDrq46wFYIGJ2o-oBDr408cfjRjf7PyHGOVa_hAiUGgkHMBVgq5TQnfC7hA3lJcXQ7qpiLnnzCTnr4oTpgON6qbxgvSq6QERd-GQl6aKVeowihCFuyTANQg_LB_ZOPnrR9pclH9fDbBRb5p6sNvQHmxEcZ3fBqL9svVviqyxzMVHhDbv8s4W4eflaI', 'Voluminous Brunette Layers', 'Client hair styling and gloss finish at Cutzy Salon.')">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Warm luxury salon interior with round backlit golden mirrors, plush velvet burgundy styling chairs, and Italian marble floors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1_eTdr-52qwjp6rVGOQENJ77zBBBc65vF-mTcQadg6-bQF9c4gtuSCOE7mOwrwsOk69nHL3d9zEj5GaBEHw7BXpsQIy5hVPu8SZsSYLqcs_Tyhth3BaWrbfqSFKC15ZJhvYjgBnR6KT0ylo1pdARHAXtSVS7HMTd3yXvYBS6hwXZ9APkTX89lqcD9Fx10dtqyL0jVuPqgbXU54fV8gIR-Wd0PLy1Ts-hW0IjxOQxki84uLIHz9fQYA9XdGedjo7brDRw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-space-md text-on-primary">
+<span class="font-label-sm uppercase tracking-widest text-secondary-fixed text-[10px]">Ambiance</span>
+<p class="font-headline-sm text-sm">Shahdara Atelier Interior</p>
+<span class="font-body-sm text-[11px] opacity-80 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">zoom_in</span> Click to inspect
+            </span>
+</div>
+</div>
+</div>
+<!-- Lightbox Modal Container -->
+<div class="fixed inset-0 z-50 bg-primary/95 backdrop-blur-md hidden flex-col items-center justify-center p-4" id="lightbox-modal">
+<button class="absolute top-6 right-6 text-on-primary hover:text-secondary-fixed transition-colors" onclick="closeLightbox()">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="max-w-3xl w-full flex flex-col items-center">
+<img class="max-h-[75vh] w-auto max-w-full rounded-lg shadow-2xl object-contain mb-4 border border-secondary/30" id="lightbox-image" src=""/>
+<p class="font-headline-sm text-on-primary text-center" id="lightbox-title"></p>
+<p class="font-body-sm text-surface-variant text-center max-w-lg mt-1 text-xs" id="lightbox-desc"></p>
+</div>
+</div>
+</div>
+</section>
+<!-- CLIENT TESTIMONIALS & GOOGLE REVIEWS SECTION -->
+<section class="w-full py-space-3xl bg-surface-container-low" id="reviews">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Rating Overview Column (4 cols) -->
+<div class="lg:col-span-4 flex flex-col items-start space-y-space-sm bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm border border-outline-variant/30">
+<span class="font-label-sm uppercase tracking-wider text-secondary font-bold">Client Acclaim</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-xl text-primary font-bold">4.9</span>
+<span class="font-headline-sm text-on-surface-variant">/ 5.0</span>
+</div>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm">
+            Based on <span class="text-primary font-semibold">1,243+ verified reviews</span> from Google Maps &amp; local patrons across East Delhi.
+          </p>
+<div class="w-full pt-space-sm border-t border-surface-container space-y-2">
+<div class="flex items-center justify-between text-xs font-body-sm">
+<span class="text-on-surface-variant">Hair Artistry &amp; Coloring</span>
+<span class="font-semibold text-primary">5.0 ★</span>
+</div>
+<div class="flex items-center justify-between text-xs font-body-sm">
+<span class="text-on-surface-variant">Hygiene &amp; Salon Ambiance</span>
+<span class="font-semibold text-primary">4.9 ★</span>
+</div>
+<div class="flex items-center justify-between text-xs font-body-sm">
+<span class="text-on-surface-variant">Staff Courtesy &amp; Care</span>
+<span class="font-semibold text-primary">5.0 ★</span>
+</div>
+</div>
+<a class="mt-space-sm w-full py-2.5 text-center bg-surface-container text-primary font-label-md uppercase tracking-wider text-xs font-semibold rounded hover:bg-primary hover:text-on-primary transition-colors" href="https://maps.google.com/?q=Cutzy+Salon+Shahdara+Delhi" rel="noopener noreferrer" target="_blank">
+            View All Google Reviews
+          </a>
+</div>
+<!-- Carousel Reviews Cards (8 cols) -->
+<div class="lg:col-span-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Review 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/20 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex text-secondary text-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-on-surface-variant text-[11px]">2 weeks ago</span>
+</div>
+<p class="font-body-md text-on-surface text-sm italic mb-space-md leading-relaxed">
+                  "Cutzy Salon is definitely the finest salon experience in Shahdara! Got my Balayage and Keratin treatment done by their master colorist. The hair shine is unreal, and zero damage thanks to Olaplex. Outstanding hospitality!"
+                </p>
+</div>
+<div class="flex items-center gap-3 pt-space-xs border-t border-surface-container">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">P</div>
+<div>
+<h4 class="font-headline-sm text-xs text-primary font-semibold">Pooja Sharma</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Verified Local Guide • Shahdara</p>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/20 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex text-secondary text-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-on-surface-variant text-[11px]">1 month ago</span>
+</div>
+<p class="font-body-md text-on-surface text-sm italic mb-space-md leading-relaxed">
+                  "Booked my complete engagement and cocktail makeup here. The HD finish stayed completely fresh for over 10 hours. Everyone complimented my eye makeup and hair curls. Highly recommend for any bride-to-be!"
+                </p>
+</div>
+<div class="flex items-center gap-3 pt-space-xs border-t border-surface-container">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">R</div>
+<div>
+<h4 class="font-headline-sm text-xs text-primary font-semibold">Rhea Gupta</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Bridal Client • Bhola Nath Nagar</p>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/20 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex text-secondary text-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-on-surface-variant text-[11px]">3 weeks ago</span>
+</div>
+<p class="font-body-md text-on-surface text-sm italic mb-space-md leading-relaxed">
+                  "Their Japanese scalp head spa and manicure are rejuvenating beyond words. Super clean, sanitized instruments, and polite staff who never push unnecessary services. Will be coming regularly!"
+                </p>
+</div>
+<div class="flex items-center gap-3 pt-space-xs border-t border-surface-container">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">A</div>
+<div>
+<h4 class="font-headline-sm text-xs text-primary font-semibold">Ananya Verma</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Verified Client • Shalimar Park</p>
+</div>
+</div>
+</div>
+<!-- Review 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/20 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex text-secondary text-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-on-surface-variant text-[11px]">Recent Visit</span>
+</div>
+<p class="font-body-md text-on-surface text-sm italic mb-space-md leading-relaxed">
+                  "Easy appointment booking via WhatsApp, located right opposite Ganesh Chole Bhature. The luxury interior feels like a South Delhi studio but at very honest and reasonable prices."
+                </p>
+</div>
+<div class="flex items-center gap-3 pt-space-xs border-t border-surface-container">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">K</div>
+<div>
+<h4 class="font-headline-sm text-xs text-primary font-semibold">Karan Malhotra</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Regular Client • Delhi</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT CUTZY SALON PHILOSOPHY SECTION -->
+<section class="w-full py-space-3xl bg-surface" id="about">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+<!-- Left Visual Collage (5 cols) -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-2xl overflow-hidden shadow-xl bg-surface-container">
+<img class="w-full h-[460px] object-cover" data-alt="Master hair stylist carefully applying professional color formulation with precision brush in a high-end salon atelier." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHJIIQCHsv4RgZ3IjBo13BPGjSOz5OqysCknT-wfMh_RBXO3HzRMdxtJ_Tyrjbcy-iOLjS_91AINJJ7W3axIPpBZ-YWGlPUDLY9nFPDamE2OiWFw8OaDTHS3ECxyyA2oD3-522mFIXvxKQuv6H5Y415ptYrKsQhGvtQWilplo3kaToKrlY3Bvj63urwWtIHVsgRcD3H66XP9KbF6QFuc5kaXxcwDRO-NDTfF6GnYW2F918asH5zNGZRsKwolBg-mihoRI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 text-on-primary">
+<span class="font-label-sm uppercase tracking-widest text-secondary-fixed">Craftsmanship</span>
+<p class="font-headline-sm text-lg mt-1">Artisanal Mastery Meets Warmth</p>
+<p class="font-body-sm text-xs opacity-90">Every touchpoint designed around individual elegance.</p>
+</div>
+</div>
+</div>
+<!-- Right Content Narrative (7 cols) -->
+<div class="lg:col-span-7 flex flex-col space-y-space-md">
+<span class="font-label-sm uppercase tracking-widest text-secondary font-bold">The Atelier Story</span>
+<h2 class="font-headline-lg text-primary">The Cutzy Philosophy of Unhurried Luxury</h2>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+            Founded with a vision to redefine salon experiences in East Delhi, Cutzy Salon merges international editorial hair protocols with bespoke, empathetic hospitality. We believe authentic beauty flourishes when scientific precision meets individualized artistry.
+          </p>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+            From our rigorously calibrated sanitization rituals to our exclusive partnership with world-leading beauty houses like <strong class="text-primary font-semibold">L'Oréal Professionnel, Olaplex, Dyson, and Kérastase</strong>, no detail is left unattended.
+          </p>
+<!-- Why Choose Us Pillars -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-sm">
+<div class="flex items-start gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-sm text-primary font-semibold">Certified Master Artists</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1">Stylists trained under international masterclasses for Balayage and modern hair cuts.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">sanitizer</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-sm text-primary font-semibold">Hospital-Grade Sterilization</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1">Single-use disposables, UV sanitizers, and immaculate hygiene standards for every guest.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">psychology_alt</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-sm text-primary font-semibold">Bespoke Consultations</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1">In-depth hair and scalp diagnostic before scissors touch your strands or dyes touch your roots.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">verified</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-sm text-primary font-semibold">Transparent Pricing</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1">Clear, upfront service estimates without hidden surcharges or surprise billing.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LOCATION & DIRECTIONS SECTION -->
+<section class="w-full py-space-3xl bg-surface-container-low border-t border-surface-container-highest" id="location">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Address & Contact Info (5 cols) -->
+<div class="lg:col-span-5 flex flex-col space-y-space-md">
+<div>
+<span class="font-label-sm uppercase tracking-widest text-secondary font-bold mb-space-2xs">Atelier Presence</span>
+<h2 class="font-headline-lg text-primary">Visit Our Shahdara Salon</h2>
+<div class="w-12 h-0.5 bg-secondary my-space-xs"></div>
+</div>
+<!-- Address Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 space-y-space-xs">
+<div class="flex items-start gap-space-xs text-primary">
+<span class="material-symbols-outlined text-secondary text-2xl flex-shrink-0 mt-0.5">location_on</span>
+<div>
+<h3 class="font-headline-sm text-base font-semibold">Cutzy Salon Address</h3>
+<p class="font-body-md text-on-surface-variant text-sm mt-1 leading-relaxed">
+                  Shop no, First Floor, 1/2, Main Rd, opp. Ganesh Chole Bhature Wala, Bhola Nath Nagar, Shalimar Park, Shahdara, Delhi, 110032
+                </p>
+<div class="mt-2 inline-flex items-center gap-1 text-xs font-label-md text-secondary uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[14px]">turn_sharp_right</span> Landmark: Opp. Ganesh Chole Bhature Wala
+                </div>
+</div>
+</div>
+</div>
+<!-- Operating Hours & Fast Links -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="font-body-md text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">calendar_today</span> Monday – Sunday:
+              </span>
+<span class="font-headline-sm text-xs font-bold text-primary">11:00 AM – 8:00 PM</span>
+</div>
+<div class="flex items-center justify-between text-sm border-t border-surface-container pt-2">
+<span class="font-body-md text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">call</span> Telephone:
+              </span>
+<a class="font-body-md text-sm font-bold text-primary hover:text-secondary underline" href="tel:+919582684926">+91 95826 84926</a>
+</div>
+<div class="flex items-center justify-between text-sm border-t border-surface-container pt-2">
+<span class="font-body-md text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">chat</span> WhatsApp:
+              </span>
+<a class="font-body-md text-sm font-bold text-[#128C7E] hover:underline" href="https://wa.me/917011171298" rel="noopener noreferrer" target="_blank">+91 70111 71298</a>
+</div>
+</div>
+<!-- Action Buttons Bar -->
+<div class="flex flex-wrap gap-space-xs pt-space-2xs">
+<a class="px-space-md py-3 bg-primary text-on-primary rounded-lg font-label-lg uppercase tracking-wider text-xs shadow hover:bg-primary-container transition-colors flex items-center gap-2" href="https://maps.google.com/?q=Shop+no+First+Floor+1/2+Main+Rd+Bhola+Nath+Nagar+Shahdara+Delhi+110032" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Get Directions</span>
+</a>
+<a class="px-space-md py-3 bg-surface-container-lowest text-primary border border-outline-variant/40 rounded-lg font-label-lg uppercase tracking-wider text-xs hover:bg-surface-container transition-colors flex items-center gap-2" href="sms:+919582684926">
+<span class="material-symbols-outlined text-[18px]">sms</span>
+<span>Send SMS</span>
+</a>
+</div>
+</div>
+<!-- Embedded Interactive Map (7 cols) -->
+<div class="lg:col-span-7">
+<div class="rounded-2xl overflow-hidden shadow-xl border-4 border-surface-container-lowest h-96 w-full bg-surface-container">
+<iframe class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Shop%20no%20First%20Floor%201/2%20Main%20Rd%20Bhola%20Nath%20Nagar%20Shahdara%20Delhi%20110032&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="Cutzy Salon Shahdara Location Map">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- QUICK ACTION BOOKING CALLOUT BANNER -->
+<section class="w-full bg-primary text-on-primary py-space-2xl relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary-fixed/10 rounded-full blur-2xl"></div>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop relative z-10 text-center flex flex-col items-center">
+<span class="font-label-sm uppercase tracking-widest text-secondary-fixed font-bold mb-space-2xs">Elevate Your Senses</span>
+<h2 class="font-headline-lg text-on-primary max-w-2xl">Step into East Delhi's Most Luxurious Salon Sanctuary</h2>
+<p class="font-body-md text-surface-container max-w-lg mt-space-xs mb-space-lg text-sm">
+        Reserve your personalized consultation slot with our master stylists today. Walk-ins welcome, reservations prioritized.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-space-sm">
+<button class="px-space-xl py-3.5 bg-secondary-fixed text-on-secondary-fixed font-label-lg uppercase tracking-wider rounded-lg shadow-lg hover:bg-secondary-fixed-dim transition-all duration-200 font-bold" onclick="openBookingModal()">
+          Book Your Appointment
+        </button>
+<a class="px-space-lg py-3.5 bg-primary-container text-on-primary font-label-lg uppercase tracking-wider rounded-lg shadow hover:bg-primary transition-all duration-200 flex items-center gap-2 border border-secondary/30" href="tel:+919582684926">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call Atelier (+91 95826 84926)</span>
+</a>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE BOOKING MODAL -->
+<div class="fixed inset-0 z-50 bg-primary/80 backdrop-blur-sm hidden flex items-center justify-center p-4" id="booking-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-lg sm:p-space-xl shadow-2xl relative border border-secondary/30 max-h-[90vh] overflow-y-auto">
+<!-- Close Button -->
+<button class="absolute top-5 right-5 text-on-surface-variant hover:text-primary transition-colors" onclick="closeBookingModal()">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<!-- Modal Header -->
+<div class="mb-space-md">
+<span class="font-label-sm uppercase tracking-wider text-secondary font-bold">Private Atelier Booking</span>
+<h3 class="font-headline-sm text-primary text-xl font-bold mt-1">Reserve Your Appointment</h3>
+<p class="font-body-sm text-on-surface-variant text-xs mt-1">Fill in the details below to confirm your slot via instant WhatsApp reservation.</p>
+</div>
+<!-- Booking Form -->
+<form class="space-y-space-sm" id="appointment-form" onsubmit="handleBookingSubmit(event)">
+<!-- Name -->
+<div>
+<label class="block font-label-md uppercase tracking-wider text-xs text-primary font-medium mb-1">Full Name</label>
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/40 focus:outline-none focus:border-secondary font-body-md text-sm text-on-surface" id="client-name" placeholder="e.g. Radhika Kapoor" required="" type="text"/>
+</div>
+<!-- Phone -->
+<div>
+<label class="block font-label-md uppercase tracking-wider text-xs text-primary font-medium mb-1">Contact Phone (+91)</label>
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/40 focus:outline-none focus:border-secondary font-body-md text-sm text-on-surface" id="client-phone" placeholder="e.g. 98765 43210" required="" type="tel"/>
+</div>
+<!-- Service Selection -->
+<div>
+<label class="block font-label-md uppercase tracking-wider text-xs text-primary font-medium mb-1">Preferred Service</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/40 focus:outline-none focus:border-secondary font-body-md text-sm text-on-surface" id="client-service">
+<option value="Haircut &amp; Blowdry">Haircut &amp; Blowdry</option>
+<option value="Bespoke Balayage &amp; Highlights">Bespoke Balayage &amp; Highlights</option>
+<option value="Keratin, Botox &amp; Nanoplastia">Keratin, Botox &amp; Nanoplastia</option>
+<option value="Olaplex Stand-Alone Bond Spa">Olaplex Stand-Alone Bond Spa</option>
+<option value="Acrylic Extensions &amp; Haute Art">Acrylic Extensions &amp; Haute Art</option>
+<option value="Rose Champagne Mani-Pedi">Rose Champagne Mani-Pedi</option>
+<option value="Hydra-Infusion &amp; 24K Gold Facial">Hydra-Infusion &amp; 24K Gold Facial</option>
+<option value="Royal Couture Bridal Aesthetics">Royal Couture Bridal Aesthetics</option>
+<option value="Japanese Head Spa &amp; Body Massage">Japanese Head Spa &amp; Body Massage</option>
+<option value="Full Body Waxing &amp; Micro-threading">Full Body Waxing &amp; Micro-threading</option>
+<option value="Other Consultation">Other Consultation</option>
+</select>
+</div>
+<!-- Date & Time Slot -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<div>
+<label class="block font-label-md uppercase tracking-wider text-xs text-primary font-medium mb-1">Preferred Date</label>
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/40 focus:outline-none focus:border-secondary font-body-md text-sm text-on-surface" id="client-date" required="" type="date"/>
+</div>
+<div>
+<label class="block font-label-md uppercase tracking-wider text-xs text-primary font-medium mb-1">Preferred Time Slot</label>
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/40 focus:outline-none focus:border-secondary font-body-md text-sm text-on-surface" id="client-time">
+<option value="11:00 AM – 01:00 PM">11:00 AM – 01:00 PM</option>
+<option value="01:00 PM – 03:00 PM">01:00 PM – 03:00 PM</option>
+<option value="03:00 PM – 05:00 PM">03:00 PM – 05:00 PM</option>
+<option value="05:00 PM – 07:00 PM">05:00 PM – 07:00 PM</option>
+<option value="07:00 PM – 08:00 PM">07:00 PM – 08:00 PM</option>
+</select>
+</div>
+</div>
+<!-- Notes -->
+<div>
+<label class="block font-label-md uppercase tracking-wider text-xs text-primary font-medium mb-1">Special Requests / Bridal Notes (Optional)</label>
+<textarea class="w-full px-3 py-2 rounded-lg bg-surface-container-low border border-outline-variant/40 focus:outline-none focus:border-secondary font-body-md text-sm text-on-surface resize-none" id="client-notes" placeholder="Tell us about your hair length, skin type or wedding date..." rows="2"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="pt-space-xs">
+<button class="w-full py-3 bg-primary-container text-on-primary font-label-lg uppercase tracking-wider text-xs font-bold rounded-lg shadow-md hover:bg-primary transition-colors flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Confirm &amp; WhatsApp Atelier</span>
+</button>
+<p class="font-body-sm text-[10px] text-on-surface-variant text-center mt-2">
+            We confirm appointments within 15 minutes during operating hours (11 AM – 8 PM).
+          </p>
+</div>
+</form>
+<!-- Confirmation Notice Area -->
+<div class="hidden text-center py-6 space-y-3" id="booking-success">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/40 text-secondary flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-3xl">done</span>
+</div>
+<h4 class="font-headline-sm text-lg text-primary">Appointment Request Dispatched!</h4>
+<p class="font-body-sm text-xs text-on-surface-variant max-w-sm mx-auto">Your booking details were forwarded to our WhatsApp reception desk. You will receive an immediate acknowledgment.</p>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-md uppercase text-xs rounded-lg mt-2" onclick="closeBookingModal()">Done</button>
+</div>
+</div>
+</div>
+<!-- FLOATING SCROLL-TO-TOP BUTTON -->
+<button aria-label="Scroll to top" class="fixed bottom-24 right-6 z-30 w-11 h-11 rounded-full bg-surface-container-lowest text-primary shadow-lg border border-outline-variant/40 hidden items-center justify-center hover:bg-surface-container transition-all" id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-xl">arrow_upward</span>
+</button>
+<!-- JAVASCRIPT MICRO-INTERACTIONS -->
+<script>
+    // Tab Filter functionality for Services
+    function filterServices(category) {
+      const tabs = document.querySelectorAll('.service-tab');
+      tabs.forEach(tab => {
+        if (tab.getAttribute('data-tab') === category) {
+          tab.classList.remove('bg-surface-container', 'text-on-surface');
+          tab.classList.add('bg-primary', 'text-on-primary');
+        } else {
+          tab.classList.remove('bg-primary', 'text-on-primary');
+          tab.classList.add('bg-surface-container', 'text-on-surface');
+        }
+      });
+
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox Controls
+    function openLightbox(imgSrc, title, desc) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-image');
+      const titleEl = document.getElementById('lightbox-title');
+      const descEl = document.getElementById('lightbox-desc');
+
+      img.src = imgSrc;
+      titleEl.textContent = title;
+      descEl.textContent = desc;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Booking Modal Controls
+    function openBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      // Set min date to today
+      const today = new Date().toISOString().split('T')[0];
+      const dateInput = document.getElementById('client-date');
+      if (dateInput) {
+        dateInput.min = today;
+        if (!dateInput.value) dateInput.value = today;
+      }
+    }
+
+    function openBookingModalWithService(serviceName) {
+      openBookingModal();
+      const select = document.getElementById('client-service');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.includes(serviceName) || select.options[i].value === serviceName) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+      
+      const form = document.getElementById('appointment-form');
+      const success = document.getElementById('booking-success');
+      if (form) form.classList.remove('hidden');
+      if (success) success.classList.add('hidden');
+    }
+
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('client-name').value;
+      const phone = document.getElementById('client-phone').value;
+      const service = document.getElementById('client-service').value;
+      const date = document.getElementById('client-date').value;
+      const time = document.getElementById('client-time').value;
+      const notes = document.getElementById('client-notes').value || 'None';
+
+      const whatsappText = encodeURIComponent(
+        `*New Booking Request - Cutzy Salon*%0A` +
+        `👤 *Name:* ${name}%0A` +
+        `📞 *Phone:* ${phone}%0A` +
+        `✂️ *Service:* ${service}%0A` +
+        `📅 *Date:* ${date}%0A` +
+        `⏰ *Time Slot:* ${time}%0A` +
+        `📝 *Notes:* ${notes}`
+      );
+
+      // Open WhatsApp direct link
+      window.open(`https://wa.me/917011171298?text=${whatsappText}`, '_blank');
+
+      // Show in-app confirmation
+      document.getElementById('appointment-form').classList.add('hidden');
+      document.getElementById('booking-success').classList.remove('hidden');
+    }
+
+    // Scroll-to-top button visibility tracker
+    window.addEventListener('scroll', () => {
+      const scrollBtn = document.getElementById('scroll-top-btn');
+      if (window.scrollY > 400) {
+        scrollBtn.classList.remove('hidden');
+        scrollBtn.classList.add('flex');
+      } else {
+        scrollBtn.classList.add('hidden');
+        scrollBtn.classList.remove('flex');
+      }
+    });
+
+    // Close modals on Esc key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        closeBookingModal();
+      }
+    });
+  </script>
+</div></main><aside class="fixed bottom-6 right-6 z-40 group"><div class="absolute bottom-full right-0 mb-2 hidden group-hover:flex items-center bg-surface-container-lowest text-primary text-xs font-medium font-body-sm px-3 py-1.5 rounded shadow-lg border border-secondary/30 whitespace-nowrap">Chat with us on WhatsApp</div><a aria-label="Chat with us on WhatsApp" class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,0.4)] hover:scale-105 active:scale-95 transition-transform duration-200" href="https://wa.me/917011171298" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[30px]">chat</span></a></aside><footer class="w-full bg-primary text-inverse-on-surface border-t border-secondary/30"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-3xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="space-y-space-md"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-secondary-fixed tracking-tight font-semibold">CUTZY</span><span class="font-label-sm text-secondary-fixed-dim uppercase tracking-widest pl-space-2xs">Salon</span></div><p class="font-body-md text-surface-container text-sm leading-relaxed">Delhi's premier sanctuary for artisanal hair transformations, bespoke bridal couture beauty, and restorative dermal wellness. Uncompromising craftsmanship and quiet opulence.</p><div class="flex items-center gap-space-sm pt-space-xs"><a aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-secondary-fixed hover:bg-secondary hover:text-on-secondary transition-colors" href="https://wa.me/917011171298" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span></a><a aria-label="Phone" class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-secondary-fixed hover:bg-secondary hover:text-on-secondary transition-colors" href="tel:+919582684926"><span class="material-symbols-outlined text-[18px]">call</span></a><a aria-label="Email" class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-secondary-fixed hover:bg-secondary hover:text-on-secondary transition-colors" href="mailto:contact@cutzysalon.com"><span class="material-symbols-outlined text-[18px]">mail</span></a></div></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-secondary-fixed text-lg font-medium">Quick Links</h3><ul class="space-y-space-xs font-body-md text-sm"><li class="flex items-center gap-space-2xs text-surface-container hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span><a data-path="home" href="#">Home</a></li><li class="flex items-center gap-space-2xs text-surface-container hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span><a data-path="services" href="#">Artisanal Services</a></li><li class="flex items-center gap-space-2xs text-surface-container hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span><a data-path="gallery" href="#">Editorial Folio</a></li><li class="flex items-center gap-space-2xs text-surface-container hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span><a data-path="reviews" href="#">Client Acclaim</a></li><li class="flex items-center gap-space-2xs text-surface-container hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span><a data-path="about" href="#">The Atelier Story</a></li><li class="flex items-center gap-space-2xs text-surface-container hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span><a data-path="appointment-booking" href="#">Schedule Visit</a></li></ul></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-secondary-fixed text-lg font-medium">Hours &amp; Sanctuary</h3><div class="space-y-space-xs text-sm font-body-md text-surface-container"><p class="flex items-center justify-between"><span class="text-secondary-fixed-dim">Monday – Sunday:</span><span class="font-medium text-white">11:00 AM – 8:00 PM</span></p><p class="text-xs text-surface-container-highest pt-space-2xs">Open seven days a week for scheduled appointments &amp; private bridal consultations.</p></div><div class="pt-space-sm border-t border-secondary/20"><span class="font-label-sm text-secondary-fixed tracking-wider uppercase block mb-1">Signature Accolade</span><p class="font-body-sm text-xs text-surface-container">Rated 4.9★ by over 1,200 discerning patrons across East Delhi.</p></div></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-secondary-fixed text-lg font-medium">Atelier Location</h3><p class="font-body-sm text-sm text-surface-container leading-relaxed flex items-start gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">location_on</span><span>Shop no, First Floor, 1/2, Main Rd, opp. Ganesh Chole Bhature Wala, Bhola Nath Nagar, Shalimar Park, Shahdara, Delhi, 110032</span></p><div class="pt-space-xs space-y-space-2xs text-sm font-body-md text-surface-container"><p class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">call</span><a class="hover:text-secondary-fixed transition-colors" href="tel:+919582684926">+91 95826 84926</a></p><p class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-secondary text-[18px]">chat</span><a class="hover:text-secondary-fixed transition-colors" href="https://wa.me/917011171298" rel="noopener noreferrer" target="_blank">+91 70111 71298 (WhatsApp)</a></p></div></div></div><div class="mt-space-2xl pt-space-md border-t border-secondary/20 flex flex-col md:flex-row items-center justify-between text-xs text-surface-container-highest font-body-sm gap-space-sm"><p>© 2025 Cutzy Salon. All rights reserved. Crafted for excellence in Shahdara, Delhi.</p><div class="flex items-center gap-space-md"><a class="hover:text-secondary-fixed transition-colors" data-path="terms-and-privacy" href="#">Terms of Service</a><span class="text-secondary/40">•</span><a class="hover:text-secondary-fixed transition-colors" data-path="terms-and-privacy" href="#">Privacy Policy</a><span class="text-secondary/40">•</span><a class="hover:text-secondary-fixed transition-colors" data-path="location" href="#">Directions</a></div></div></div></footer></body></html>
